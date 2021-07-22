@@ -4,13 +4,13 @@
 DROP TABLE IF EXISTS Usuario ;
 
 CREATE TABLE IF NOT EXISTS Usuario (
-  id_usuario SERIAL,
+  id_usuario SERIAL NOT NULL,
   nome TEXT NULL,
   senha VARCHAR(100) NULL,
   email TEXT NULL,
-  data_nascimento DATE NULL,
+  data_nascimento DATE NOT NULL,
   cpf VARCHAR(11) NULL,
-  is_adm BOOLEAN NULL DEFAULT false,
+  is_adm BOOLEAN NULL,
   PRIMARY KEY (id_usuario)
   
 );
@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS Usuario (
 DROP TABLE IF EXISTS Evento ;
 
 CREATE TABLE IF NOT EXISTS Evento (
-  cod_evento SERIAL,
-  datetime_inicio TIMESTAMP NULL,
-  datetime_fim TIMESTAMP NULL,
+  cod_evento SERIAL NOT NULL,
+  datetime_inicio TIMESTAMP NOT NULL,
+  datetime_fim TIMESTAMP NOT NULL,
   local TEXT NULL,
   titulo TEXT NULL,
   descricao TEXT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS EventoGasto (
   cod_evento INTEGER NOT NULL,
   valor FLOAT NULL,
   destino TEXT NULL,
-  data DATE NULL,
+  data DATE NOT NULL,
   PRIMARY KEY (seq_gasto_evento, cod_evento),
   CONSTRAINT cod_evento
     FOREIGN KEY (cod_evento)
@@ -56,10 +56,10 @@ CREATE TABLE IF NOT EXISTS EventoGasto (
 DROP TABLE IF EXISTS EventoInscricao ;
 
 CREATE TABLE IF NOT EXISTS EventoInscricao (
-  cod_inscricao_evento SERIAL,
+  cod_inscricao_evento SERIAL NOT NULL,
   id_usuario INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
-  is_certified BOOLEAN NULL DEFAULT false,
+  is_certified BOOLEAN NULL,
   PRIMARY KEY (cod_inscricao_evento),
   CONSTRAINT cod_evento
     FOREIGN KEY (cod_evento)
@@ -100,10 +100,10 @@ DROP TABLE IF EXISTS AtividadeInscricao ;
 
 CREATE TABLE IF NOT EXISTS AtividadeInscricao (
   cod_inscricao_evento INTEGER NOT NULL,
-  status_avaliacao BOOLEAN NULL DEFAULT false,
+  status_avaliacao BOOLEAN NULL,
   link_avaliacao VARCHAR(45) NULL,
   descricao_avaliacao TEXT NULL,
-  is_certified BOOLEAN NULL DEFAULT false,
+  is_certified BOOLEAN NULL,
   seq_atividade INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
   PRIMARY KEY (cod_inscricao_evento, seq_atividade, cod_evento),
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS AtividadeInscricao (
 DROP TABLE IF EXISTS Parceiro ;
 
 CREATE TABLE IF NOT EXISTS Parceiro (
-  id_parceiro SERIAL,
+  id_parceiro SERIAL NOT NULL,
   nome TEXT NULL,
   email TEXT NULL,
   PRIMARY KEY (id_parceiro)
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS ParceiroTelefone (
 DROP TABLE IF EXISTS Patrocinador ;
 
 CREATE TABLE IF NOT EXISTS Patrocinador (
-  id_patrocinador SERIAL,
+  id_patrocinador SERIAL NOT NULL,
   email TEXT NULL,
   nome TEXT NULL,
   PRIMARY KEY (id_patrocinador)
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS Patrocinio (
 DROP TABLE IF EXISTS Material ;
 
 CREATE TABLE IF NOT EXISTS Material (
-  id_material SERIAL,
+  id_material SERIAL NOT NULL,
   conteudo TEXT NULL,
   tipo VARCHAR(25) NULL,
   titulo VARCHAR(50) NULL,
@@ -246,7 +246,7 @@ CREATE TABLE IF NOT EXISTS AtividadeGasto (
   seq_gasto_atividade INTEGER NOT NULL,
   valor FLOAT NULL,
   destino VARCHAR(45) NULL,
-  data DATE NULL,
+  data DATE NOT NULL,
   seq_atividade INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
   PRIMARY KEY (seq_gasto_atividade, seq_atividade, cod_evento),
@@ -287,8 +287,8 @@ DROP TABLE IF EXISTS Competicao ;
 CREATE TABLE IF NOT EXISTS Competicao (
   plataforma VARCHAR(45) NULL,
   link VARCHAR(45) NULL,
-  datetime_inicio TIMESTAMP NULL,
-  datetime_fim TIMESTAMP NULL,
+  datetime_inicio TIMESTAMP NOT NULL,
+  datetime_fim TIMESTAMP NOT NULL,
   seq_atividade INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
   PRIMARY KEY (seq_atividade, cod_evento),
@@ -305,8 +305,8 @@ CREATE TABLE IF NOT EXISTS Competicao (
 DROP TABLE IF EXISTS Curso ;
 
 CREATE TABLE IF NOT EXISTS Curso (
-  data_inicio DATE NULL,
-  data_fim DATE NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE NOT NULL,
   qtde_horas INTEGER NULL,
   ementa TEXT NULL,
   seq_atividade INTEGER NOT NULL,
@@ -326,9 +326,9 @@ DROP TABLE IF EXISTS Aula ;
 
 CREATE TABLE IF NOT EXISTS Aula (
   seq_aula INTEGER NOT NULL,
-  data DATE NULL,
-  hora_inicio TIME NULL,
-  hora_fim TIME NULL,
+  data DATE NOT NULL,
+  hora_inicio TIME NOT NULL,
+  hora_fim TIME NOT NULL,
   titulo VARCHAR(100) NULL,
   seq_atividade INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
@@ -347,9 +347,9 @@ DROP TABLE IF EXISTS Palestra ;
 
 CREATE TABLE IF NOT EXISTS Palestra (
   resumo TEXT NULL,
-  data DATE NULL,
-  hora_inicio TIME NULL,
-  hora_fim TIME NULL,
+  data DATE NOT NULL,
+  hora_inicio TIME NOT NULL,
+  hora_fim TIME NOT NULL,
   seq_atividade INTEGER NOT NULL,
   cod_evento INTEGER NOT NULL,
   PRIMARY KEY (seq_atividade, cod_evento),
@@ -358,3 +358,4 @@ CREATE TABLE IF NOT EXISTS Palestra (
     REFERENCES Atividade (seq_atividade, cod_evento)
 
 );
+

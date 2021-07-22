@@ -19,10 +19,10 @@ INSERT INTO
         (1, CURRVAL('evento_cod_evento_seq'), 2000.0, '2021-04-19', CURRVAL('patrocinador_id_patrocinador_seq'));
 
 INSERT INTO
-    EventoGasto (seq_gasto_evento, cod_evento, valor, destino) --TODO esquecemos da data
+    EventoGasto (seq_gasto_evento, cod_evento, valor, destino,data)
     VALUES
-        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Coffee Break'),
-        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Staff');
+        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Coffee Break','2021-07-20'),
+        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Staff','2021-07-21');
 
 INSERT INTO
     Atividade (seq_atividade, cod_evento, local, titulo, num_vagas, tipo)

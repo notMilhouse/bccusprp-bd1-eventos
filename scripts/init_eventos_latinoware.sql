@@ -19,10 +19,10 @@ INSERT INTO
         (1, CURRVAL('evento_cod_evento_seq'), 15000.0, '2021-03-15', CURRVAL('patrocinador_id_patrocinador_seq'));
 
 INSERT INTO
-    EventoGasto (seq_gasto_evento, cod_evento, valor, destino)
+    EventoGasto (seq_gasto_evento, cod_evento, valor, destino,data)
     VALUES
-        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Emissão de ingresso'),
-        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Funcionários');
+        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Emissão de ingresso','2021-08-20'),
+        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Funcionários','2021-08-21');
 
 INSERT INTO
     Atividade (seq_atividade, cod_evento, local, titulo, num_vagas, tipo)
@@ -163,4 +163,6 @@ INSERT INTO
         ((SELECT cod_inscricao_evento FROM eventoinscricao WHERE id_usuario = 4 AND eventoinscricao.cod_evento = CURRVAL('evento_cod_evento_seq'))
             , 2, CURRVAL('evento_cod_evento_seq'), 'www.formsLatinoW.com', 'Faça uma breve redação dos fundamentos do software livre');
        
+
+
 

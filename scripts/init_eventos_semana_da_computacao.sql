@@ -20,10 +20,10 @@ INSERT INTO
 	
 
 INSERT INTO
-    EventoGasto (seq_gasto_evento, cod_evento, valor, destino)
+    EventoGasto (seq_gasto_evento, cod_evento, valor, destino,data)
     VALUES
-        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Cafézinho da tarde'),
-        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Papel crepom');
+        (1, CURRVAL('evento_cod_evento_seq'), 300.0, 'Cafézinho da tarde','2021-10-21'),
+        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Papel crepom','2021-10-30');
 
 INSERT INTO
     Atividade (seq_atividade, cod_evento, local, titulo, num_vagas, tipo)

@@ -19,10 +19,10 @@ INSERT INTO
         (1, CURRVAL('evento_cod_evento_seq'), 3000.0, '2021-10-17', CURRVAL('patrocinador_id_patrocinador_seq'));
 
 INSERT INTO
-    EventoGasto (seq_gasto_evento, cod_evento, valor, destino)
+    EventoGasto (seq_gasto_evento, cod_evento, valor, destino,data)
     VALUES
-        (1, CURRVAL('evento_cod_evento_seq'), 500.0, 'Degustacao de gelattos'),
-        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Segurancas');
+        (1, CURRVAL('evento_cod_evento_seq'), 500.0, 'Degustacao de gelattos','2021-10-20'),
+        (2, CURRVAL('evento_cod_evento_seq'), 1000.0, 'Segurancas','2021-10-23');
 
 INSERT INTO
     Atividade (seq_atividade, cod_evento, local, titulo, num_vagas, tipo)
@@ -49,7 +49,7 @@ INSERT INTO
 INSERT INTO
     Parceiro (nome, email)
     VALUES
-        ('Ven Mecomer', 'vm@google.com');
+        ('Pos Gri', 'psql@google.com');
 
 INSERT INTO
     ParceiroTelefone (id_parceiro, telefone)
@@ -114,7 +114,7 @@ INSERT INTO
 INSERT INTO
     Palestra (resumo, data, hora_inicio, hora_fim, seq_atividade, cod_evento)
     VALUES
-       ('Talk about PWAs', '2021-10-21', '16:00:00', '18:00:00', 2, CURRVAL('evento_cod_evento_seq'));
+       ('Empreender em TI: com as plataformas do Google podem te ajudar', '2021-10-21', '16:00:00', '18:00:00', 2, CURRVAL('evento_cod_evento_seq'));
 
 INSERT INTO
     Competicao (plataforma, link, datetime_inicio, datetime_fim, seq_atividade, cod_evento)
@@ -151,4 +151,3 @@ INSERT INTO
             , 3, CURRVAL('evento_cod_evento_seq'), 'www.forms.com', 'o que achou da maratona?'),
         ((SELECT cod_inscricao_evento FROM eventoinscricao WHERE id_usuario = 5 AND eventoinscricao.cod_evento = CURRVAL('evento_cod_evento_seq'))
             , 3, CURRVAL('evento_cod_evento_seq'), 'www.forms.com', 'o que achou da maratona?');
-
