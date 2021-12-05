@@ -9,10 +9,21 @@
 <body>
 
     <style>
+        html, body{
+            height: 100vh;
+            width: 100vw;
+            
+            display: flex;
+            justify-content: space-around;
+            align-items:center;
+        }
         .button {
-            width: 100px;
-            height: 100px;
-            background-color: #0022ff;
+            text-align: center;
+            width: 30%;
+            height: 1rem;
+            border-radius: 0.5em;
+            padding:1em;
+            background-color: #9550FF;
             color: white;
         }
     </style>
