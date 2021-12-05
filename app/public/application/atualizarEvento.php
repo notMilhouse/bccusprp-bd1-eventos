@@ -20,12 +20,10 @@ echo "<p>Atualizacao efetuada com sucesso!<br><br>
 */
 
 <?php
-$conex1 = pg_connect ("host = db
-port = 5432  
-dbname = evento  
-user = evento  
-password = evento")
-or die ("Falha na conexão!".pg_last_error());
+
+include '../repository/dbConfig.php';
+
+$db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
 
 $title = $_POST['eventTitle'];
 $local = $_POST['eventLocation'];

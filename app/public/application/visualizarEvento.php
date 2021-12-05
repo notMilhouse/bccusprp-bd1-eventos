@@ -1,3 +1,5 @@
+
+<?php
 /*
 
 
@@ -13,22 +15,19 @@ dateTime_fim -> eventEnd
 
 */
 
-<?php
-$conex1 = pg_connect ("host = db
-port = 5432  
-dbname = evento  
-user = evento  
-password = evento")
-or die ("Falha na conexão!".pg_last_error());
+include '../repository/dbConfig.php';
 
-$title = $_POST['eventTitle'];
-$cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'"); // gets event code based on the title, is it enough? I dont think so
+function getSingleEvent($db_connection) {
 
-$view_event = "SELECT titulo, local,descricao,dateTime_inicio, dateTime_fim FROM Evento WHERE cod_evento = $cod");
+    $title = $_POST['eventTitle'];
+    $cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'");
 
-// como apresentar essas infos? echo, printf .... ?
-
-$view_event_result = pg_exec($conex1,$view_event);
+    $retrieve_single_event_query = "SELECT * FROM Evento WHERE cod_evento = cod;";
 
 
-pg_close ($conex1);
+    $retrieved_event = pg_exec($db_connection,$retrieve_single_event_query);
+
+
+    return pg_fetch_all($retrieved_event);
+
+}
