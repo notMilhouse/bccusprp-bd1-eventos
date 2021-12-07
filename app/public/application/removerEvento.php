@@ -15,12 +15,8 @@ include '../repository/dbConfig.php';
 
 $db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
 
-$title = $_POST['eventTitle'];
-$cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'"); // gets event code based on the title, is it enough? I dont think so
- 
-/*
-$cod = $_POST['eventCode'];
-*/
+$cod = $_GET['cod_evento'];
+
 
 $delete_event = "DELETE FROM Evento WHERE cod_evento = '$cod';";
 

@@ -7,7 +7,7 @@
     <title>Criacao de evento</title>
 </head>
 <body>
-    <h1>Criar evento</h1>
+    <h1>Remover evento</h1>
     <form action="../application/removerEvento.php" method="post">
         <!--
         <label for="eventCode">Codigo do evento</label>

@@ -19,11 +19,8 @@ include '../repository/dbConfig.php';
 
 function getSingleEvent($db_connection) {
 
-    $title = $_POST['eventTitle'];
-    $cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'");
-
-    $retrieve_single_event_query = "SELECT * FROM Evento WHERE cod_evento = cod;";
-
+    $cod = $_GET['cod_evento'];
+    $retrieve_single_event_query = "SELECT * FROM evento WHERE cod_evento = '$cod'";
 
     $retrieved_event = pg_exec($db_connection,$retrieve_single_event_query);
 
