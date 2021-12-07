@@ -1,4 +1,4 @@
-rodar `docker-compose up` e show
+rodar `sudo docker-compose up` e show
 
 conectar ao banco com datagrip ou qlqr outra coisa
 usando as credenciais descritas no docker-compose.yml
