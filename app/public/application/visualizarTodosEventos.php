@@ -21,10 +21,9 @@ include '../repository/dbConfig.php';
 function getEvents($db_connection) {
     $retrieve_all_events_query = "SELECT * FROM Evento;";
 
-    // como apresentar essas infos? echo, printf .... ?
 
-    $retrieved_events = pg_exec($db_connection,$retrieve_all_events_query);
+    $retrieved_all_events = pg_exec($db_connection,$retrieve_all_events_query);
 
 
-    return pg_fetch_all($retrieved_events);
+    return pg_fetch_all($retrieved_all_events);
 }
