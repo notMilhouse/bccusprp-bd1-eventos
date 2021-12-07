@@ -1,31 +1,31 @@
+
+
+<?php
+
 /*
 
 # Formulario de atualizar evento:
 
 titulo -> eventTitle
 local -> eventLocation
-descricao -> eventDescription 
+descricao -> eventDescription
 dateTime_inicio -> eventBegin
 dateTime_fim -> eventEnd
 
-# jogar no banco 
+# jogar no banco
 
-tipo isso   
+tipo isso
 
-$result2 = pg_exec($conex2, "UPDATE Func SET nome = '$nome_recebido' WHERE 
-cod_func = '$cod_recebido'"); 
-echo "<p>Atualizacao efetuada com sucesso!<br><br> 
+$result2 = pg_exec($conex2, "UPDATE Func SET nome = '$nome_recebido' WHERE
+cod_func = '$cod_recebido'");
+echo "<p>Atualizacao efetuada com sucesso!<br><br>
 
 
 */
 
-<?php
-$conex1 = pg_connect ("host = db
-port = 5432  
-dbname = evento  
-user = evento  
-password = evento")
-or die ("Falha na conexão!".pg_last_error());
+include '../repository/dbConfig.php';
+
+$db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
 
 $title = $_POST['eventTitle'];
 $local = $_POST['eventLocation'];

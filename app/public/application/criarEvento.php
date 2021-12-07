@@ -29,7 +29,7 @@ $begin = $_POST['eventBegin'];
 $end = $_POST['eventEnd'];
 
 $create_event_query = "
-    INSERT INTO evento (titulo, datetime_inicio, datetime_fim, local, descricao)
+    INSERT INTO Evento (titulo, datetime_inicio, datetime_fim, local, descricao)
         VALUES ('$title', '$begin', '$end', '$local', '$description')
 ";
 
@@ -38,3 +38,5 @@ $create_event_result = pg_exec($db_connection,$create_event_query);
 
 
 pg_close($db_connection);
+
+?>
