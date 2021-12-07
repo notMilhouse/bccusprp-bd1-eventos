@@ -30,6 +30,5 @@
 
     <a class="button" href="/view/criarEvento.php">Criar um evento</a>
     <a class="button" href="/view/visualizarTodosEventos.php">Visualizar todos os eventos</a>
-    <a class="button" href="/view/atualizarEvento.php">Atualizar evento</a>
 </body>
 </html>

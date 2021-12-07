@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 
 /*
@@ -34,3 +36,5 @@ if($delete_event_result) {
 
 pg_close ($db_connection);
 
+?>
+<a href="http://127.0.0.1/view/visualizarTodosEventos.php"> Voltar para lista de eventos </a>

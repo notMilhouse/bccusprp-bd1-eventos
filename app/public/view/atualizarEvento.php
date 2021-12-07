@@ -1,3 +1,13 @@
+<?php
+include '../application/visualizarEvento.php';
+
+$eventos = getSingleEvent($_GET['cod_evento']);
+$evento = $eventos[0];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +20,22 @@
     <h1>Atualizar evento</h1>
     <form action="../application/atualizarEvento.php" method="post">
 
-        
+        <input style = "display: none;" type="text" name="eventCode" value="<?=$evento["cod_evento"];?>">
 
         <label for="eventTitle">Titulo do evento</label>
-        <input type="text" name="eventTitle" id="eventTitle"><br>
+        <input type="text" name="eventTitle" id="eventTitle" value="<?=$evento["titulo"];?>"><br>
 
         <label for="eventDescription">Descricao do evento</label>
-        <input type="text" name="eventDescription" id="eventDescription"><br>
+        <input type="text" name="eventDescription" id="eventDescription" value="<?=$evento["descricao"];?>"><br>
 
         <label for="eventLocation">Local do evento</label>
-        <input type="text" name="eventLocation" id="eventLocation"><br>
+        <input type="text" name="eventLocation" id="eventLocation" value="<?=$evento["local"];?>"><br>
         
         <label for="eventBegin">Data de inicio do evento</label>
-        <input type="datetime-local" name="eventBegin" id="eventBegin"><br>
+        <input type="datetime-local" name="eventBegin" id="eventBegin" value="<?=$evento["datetime_inicio"];?>"><br>
         
         <label for="eventEnd">Data de fim do evento</label>
-        <input type="datetime-local" name="eventEnd" id="eventEnd"><br>
+        <input type="datetime-local" name="eventEnd" id="eventEnd" value="<?=$evento["datetime_fim"];?>"><br>
         
         <input type="submit" value="Submit"><br>
     </form>

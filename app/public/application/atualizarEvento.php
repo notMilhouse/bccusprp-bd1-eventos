@@ -25,51 +25,27 @@ echo "<p>Atualizacao efetuada com sucesso!<br><br>
 
 include '../repository/dbConfig.php';
 
-$db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
+$db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
 $title = $_POST['eventTitle'];
 $local = $_POST['eventLocation'];
 $description = $_POST['eventDescription'];
 $begin = $_POST['eventBegin'];
 $end = $_POST['eventEnd'];
+$cod_evento = $_POST['eventCode'];
 
-$cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'"); // gets event code based on the title, is it enough? I dont think so
+$resultado = pg_exec($db_connection,"
+    UPDATE evento SET 
+        titulo = '$title',
+        local='$local',
+        descricao='$description',
+        datetime_inicio = '$begin',
+        datetime_fim = '$end'
+    WHERE cod_evento = '$cod_evento';
 
-// queries
+");
 
-$updtae_event_title = "UPDATE Evento SET title = '$title' WHERE cod_evento = $cod )";
-$updtae_event_local = "UPDATE Evento SET local = '$local' WHERE cod_evento = $cod )";
-$updtae_event_description = "UPDATE Evento SET description = '$description' WHERE cod_evento = $cod )";
-$updtae_event_begin = "UPDATE Evento SET dateTime_inicio = $begin WHERE cod_evento = $cod )";
-$updtae_event_end = "UPDATE Evento SET dateTime_fim = $end WHERE cod_evento = $cod )";
+pg_close ($db_connection);
 
-// supposing every variable will receive the value passed in the form, otherwise null will be passed
-// updates whichever attribute that is not null
-
-if(!is_null($title))
-{
-    $update_event_title_result = pg_exec($conex1,$updtae_event_title);
-}
-
-if(!is_null($local))
-{
-    $update_event_local_result = pg_exec($conex1,$updtae_event_local);
-}
-
-if(!is_null($description))
-{
-    $update_event_description_result = pg_exec($conex1,$updtae_event_description);
-}
-
-if(!is_null($begin))
-{
-    $update_event_begin_result = pg_exec($conex1,$updtae_event_begin);
-}
-
-if(!is_null($end))
-{
-    $update_event_end_result = pg_exec($conex1,$updtae_event_end);
-}
-
-
-pg_close ($conex1);
+?>
+<a href="http://127.0.0.1/view/visualizarEvento.php?cod_evento=<?= $cod_evento ?>"> Voltar para o evento </a>
