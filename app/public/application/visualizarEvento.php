@@ -24,7 +24,7 @@ or die ("Falha na conexão!".pg_last_error());
 $title = $_POST['eventTitle'];
 $cod = pg_exec($conex1,"SELECT cod_evento FROM Evento WHERE titulo = '$title'"); // gets event code based on the title, is it enough? I dont think so
 
-$view_event = "SELECT titulo, local,descricao,dateTime_inicio, dateTime_fim FROM Evento WHERE cod_evento = $cod");
+$view_event = "SELECT titulo, local,descricao,dateTime_inicio, dateTime_fim FROM Evento WHERE cod_evento = $cod";
 
 // como apresentar essas infos? echo, printf .... ?
 
