@@ -11,7 +11,6 @@ EventoInscricao (id_usuario, cod_evento)
 
 include '../../repository/dbConfig.php';
 
-
 $db_connection = pg_connect(getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
 // forms recebe o id do usuario e o nome do evento
@@ -32,17 +31,13 @@ INSERT INTO eventoinscricao (id_usuario,cod_evento)
 
 $subscribe_event_result = pg_exec($db_connection,$inscription_user_query);
 
+pg_close ($db_connection);
+
 if($subscribe_event_result === false) {
     ?>
-    <h1>Algum erro ocorreu durante o processo de inscricao!</h1><br>
+        <h1>Algum erro ocorreu durante o processo de inscricao!</h1><br>
     <?php
 } else {
-    ?>
-    <h1>Usuario inscrito no evento com sucesso!</h1>
-    <?php
+    header("Location: " . "http://127.0.0.1/view/eventoInscricao/visualizarTodasInscricoes.php");
 }
-
-pg_close ($db_connection);
 ?>
-
-<a href="http://127.0.0.1/view/eventoInscricao/inscricaoEvento.php">Inscrever-se em outro evento </a>

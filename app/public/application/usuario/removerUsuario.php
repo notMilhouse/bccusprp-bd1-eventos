@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 
 /*
@@ -28,12 +26,8 @@ if($delete_user_result === false) { ?>
     <h1>Algum erro ocorreu durante o processo de remoção do usuario!</h1><br>
 <?php
 } else {
-    ?>
-        <h1>Usuario removido com sucesso!</h1>
-    <?php
+    header("Location: " . "http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php");
 }
 
 pg_close ($db_connection);
-
 ?>
-<a href="http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php"> Voltar para lista de usuarios </a>

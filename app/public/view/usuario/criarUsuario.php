@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include '../header.php'; ?>
 
-        <title>Cadastro de usuário</title>
-    </head>
-    <body>
-        <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
+<title>Cadastro de usuário</title>
+</head>
 
-        <h1>Cadastro de usuário</h1>
+<body>
+    <?php include '../navbar.php'?>
+    <div class="container section">
+        <h5>Cadastro de usuário</h5>
         <form action="../../application/usuario/criarUsuario.php" method="post">
 
             <label for="userName">Nome</label>
@@ -28,9 +24,10 @@
             <label for="userCPF">CPF</label>
             <input type="text" name="userCPF" id="userCPF" placeholder="Sem pontos ou traços"><br>
 
-            <input type="submit" value="Submit"><br>
+            <input class="btn" type="submit" value="Submit"><br>
         </form>
-    </body>
+    </div>
+</body>
 </html>
 
 

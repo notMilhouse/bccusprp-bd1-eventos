@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Criacao de evento</title>
+<?php include '../header.php'; ?>
+<title>Criacao de evento</title>
 </head>
+
 <body>
-    <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
-    <h1>Criar evento</h1>
+<?php include '../navbar.php'?>
+<div class="container section">
+    <h5>Criar evento</h5>
     <form action="../../application/evento/criarEvento.php" method="post">
 
         <label for="eventTitle">Titulo do evento</label>
@@ -27,8 +23,9 @@
         <label for="eventEnd">Data de fim do evento</label>
         <input type="datetime-local" name="eventEnd" id="eventEnd"><br>
         
-        <input type="submit" value="Submit"><br>
+        <input class="btn" type="submit" value="Submit"><br>
     </form>
+</div>
 </body>
 </html>
 

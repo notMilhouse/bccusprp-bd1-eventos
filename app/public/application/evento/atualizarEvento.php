@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -47,5 +45,5 @@ $resultado = pg_exec($db_connection,"
 
 pg_close ($db_connection);
 
+header("Location: " . "http://127.0.0.1/view/evento/visualizarTodosEventos.php");
 ?>
-<a href="http://127.0.0.1/view/evento/visualizarEvento.php?cod_evento=<?= $cod_evento ?>"> Voltar para o evento </a>

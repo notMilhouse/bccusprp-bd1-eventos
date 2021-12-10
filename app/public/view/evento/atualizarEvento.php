@@ -3,21 +3,16 @@ include '../../application/evento/visualizarEvento.php';
 
 $evento = getSingleEvent($_GET['cod_evento']);
 
+include '../header.php';
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Atualização de evento</title>
+<title>Atualização de evento</title>
 </head>
+
 <body>
-    <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
-    <h1>Atualizar evento</h1>
+<?php include '../navbar.php'?>
+<div class="container section">
+    <h5>Atualizar evento</h5>
     <form action="../../application/evento/atualizarEvento.php" method="post">
 
         <input style = "display: none;" type="text" name="eventCode" value="<?=$evento["cod_evento"];?>">
@@ -37,7 +32,8 @@ $evento = getSingleEvent($_GET['cod_evento']);
         <label for="eventEnd">Data de fim do evento</label>
         <input type="datetime-local" name="eventEnd" id="eventEnd" value="<?=$evento["datetime_fim"];?>"><br>
         
-        <input type="submit" value="Submit"><br>
+        <input class="btn" type="submit" value="Submit"><br>
     </form>
+</div>
 </body>
 </html>

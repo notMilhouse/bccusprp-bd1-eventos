@@ -3,21 +3,18 @@ include '../../application/usuario/visualizarUsuario.php';
 
 $usuario = getSingleUser($_GET['id_usuario']);
 
+include '../header.php';
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Atualização de usuario</title>
-    </head>
-    <body>
-        <a href="http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php">Voltar à lista de usuários</a><br>
 
-        <h1>Atualizar usuario</h1>
+<title>Atualização de usuario</title>
+</head>
+
+<body>
+    <?php include '../navbar.php'?>
+    <div class="container section">
+        <h5>Atualizar usuario</h5>
         <form action="../../application/usuario/atualizarUsuario.php" method="post">
 
             <input style = "display: none;" type="text" name="userId" value="<?=$usuario["id_usuario"];?>">
@@ -37,7 +34,8 @@ $usuario = getSingleUser($_GET['id_usuario']);
             <label for="userCPF">CPF</label>
             <input type="text" name="userCPF" id="userCPF" value = "<?= $usuario["cpf"]; ?>"><br>
 
-            <input type="submit" value="Submit"><br>
+            <input class="btn" type="submit" value="Submit"><br>
         </form>
-    </body>
+    </div>
+</body>
 </html>
