@@ -2,19 +2,19 @@
 
 include '../application/visualizarTodosEventos.php';
 
-$db_connection = pg_connect($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
+$db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
 
-$eventos = getEvents($db_connection);
+$eventos = getCurrentEvents($db_connection);
 
 pg_close ($db_connection);
 
 ?>
 
 <ul>
-    <br>
-    <a href="http://127.0.0.1/view/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
+<br>
     <a href="http://127.0.0.1/view/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
-    <form action="http://127.0.0.1/view/buscaEventos.php">
+    <a href="http://127.0.0.1/view/visualizarTodosEventos.php">Vizualizar Todos os Eventos</a><br>
+    <form action="http://127.0.0.1/view/buscaEventos.php" method="GET">
         <label for="eventTitle">Busca por Título</label><br>
         <input type="text" name="eventTitle">
         <input type="submit" value="submit">
