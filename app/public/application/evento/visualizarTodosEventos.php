@@ -52,7 +52,10 @@ function getEvents() {
 function searchEvents($event_title){
     $db_connection = pg_connect(getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
-    $get_event_info_query = "SELECT * FROM Evento WHERE titulo LIKE '%$event_title%';";
+    // The WHERE clause condition makes it so when there is a title to search for, only the matching results are considered,
+    // and when there is none, the LIKE pattern fails, at the same time as the second condition does not filter the title column,
+    // giving us all tuples in the table if there is any.
+    $get_event_info_query = "SELECT * FROM Evento WHERE titulo LIKE '%$event_title%' OR '$event_title' = '';";
     $retrieved_info = pg_exec($db_connection,$get_event_info_query);
 
     pg_close($db_connection);

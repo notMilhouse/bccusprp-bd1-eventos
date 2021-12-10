@@ -10,3 +10,11 @@ rodar migrations na ordem:
 
 
 conexoes ao banco no codigo devem fazer referencia ao container do banco (alterar antes de subir pro cacto).
+
+
+Next Steps:
+- highlight da aba atual
+- condensação de abas
+- formato da data
+- persistir o estado do banco fora do container em um dir `.volumes`
+- rotas em variaveis para evitar repeticao e facilitar manutencao
