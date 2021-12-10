@@ -1,17 +1,34 @@
-<?php
-$conex1 = pg_connect ("host = db
-port = 5432  
-dbname = evento  
-user = evento  
-password = evento")
-or die ("Falha na conexão!".pg_last_error());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+</head>
+<body>
 
+    <style>
+        html, body{
+            height: 100vh;
+            width: 100vw;
+            
+            display: flex;
+            justify-content: space-around;
+            align-items:center;
+        }
+        .button {
+            text-align: center;
+            width: 30%;
+            height: 1rem;
+            border-radius: 0.5em;
+            padding:1em;
+            background-color: #9550FF;
+            color: white;
+        }
+    </style>
 
-$result1 = pg_exec ($conex1, "SELECT * FROM aula;");
-
-$tot_tuplas = pg_numrows ($result1);
-
-printf("Numero de linhas: $tot_tuplas ");
-
-
-pg_close ($conex1);
+    <a class="button" href="/view/criarEvento.php">Criar um evento</a>
+    <a class="button" href="/view/visualizarTodosEventos.php">Visualizar todos os eventos</a>
+</body>
+</html>
