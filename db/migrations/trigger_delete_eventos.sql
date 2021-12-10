@@ -14,7 +14,10 @@ WHERE EventoGasto.cod_evento = OLD.cod_evento;
 DELETE FROM Patrocinio
 WHERE Patrocinio.cod_evento = OLD.cod_evento;
 
-RETURN NEW;
+DELETE FROM eventoinscricao
+WHERE eventoinscricao.cod_evento = OLD.cod_evento;
+
+RETURN OLD;
 
 END;
 $$
