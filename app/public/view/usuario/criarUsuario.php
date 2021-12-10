@@ -8,6 +8,8 @@
     <title>Cadastro de usuário</title>
 </head>
 <body>
+    <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
+
     <h1>Cadastro de usuário</h1>
     <form action="../../application/usuario/criarUsuario.php" method="post">
 

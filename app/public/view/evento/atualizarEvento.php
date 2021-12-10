@@ -1,9 +1,7 @@
 <?php
-include '../application/visualizarEvento.php';
+include '../../application/evento/visualizarEvento.php';
 
-$eventos = getSingleEvent($_GET['cod_evento']);
-$evento = $eventos[0];
-
+$evento = getSingleEvent($_GET['cod_evento']);
 
 ?>
 
@@ -18,8 +16,9 @@ $evento = $eventos[0];
     <title>Atualização de evento</title>
 </head>
 <body>
+    <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
     <h1>Atualizar evento</h1>
-    <form action="../application/atualizarEvento.php" method="post">
+    <form action="../../application/evento/atualizarEvento.php" method="post">
 
         <input style = "display: none;" type="text" name="eventCode" value="<?=$evento["cod_evento"];?>">
 

@@ -14,6 +14,7 @@ $usuarios = getUsuarios();
         <title>Lista de usuarios</title>
     </head>
     <body>
+        <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
         <ul>
             <?php foreach ($usuarios as $usuario): ?>
                 <li>

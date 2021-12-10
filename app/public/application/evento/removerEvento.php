@@ -13,7 +13,7 @@ deletar
 
 */
 
-include '../repository/dbConfig.php';
+include '../../repository/dbConfig.php';
 
 $db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
@@ -37,4 +37,4 @@ if($delete_event_result === false) {
 pg_close ($db_connection);
 
 ?>
-<a href="http://127.0.0.1/view/visualizarTodosEventos.php"> Voltar para lista de eventos </a>
+<a href="http://127.0.0.1/view/evento/visualizarTodosEventos.php"> Voltar para lista de eventos </a>
