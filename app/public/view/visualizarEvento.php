@@ -7,7 +7,6 @@ $eventos = getSingleEvent($_GET['cod_evento']);
 ?>
 
 <ul>
-
     <?php foreach ($eventos as $evento): ?> <!--como so tem 1 evento, pd tirar o for each, mas ai tem que ter o php em algum lugar aqui? acho que nao-->
         <li>
             <h3>Titulo:</h3> <p> <?= $evento["titulo"]; ?> </p><br>

@@ -24,13 +24,13 @@ $delete_event = "DELETE FROM Evento WHERE cod_evento = '$cod';";
 
 $delete_event_result = pg_exec($db_connection,$delete_event);
 
-if($delete_event_result) {
+if($delete_event_result === false) {
     ?>
-    <h1>Evento removido com sucesso!</h1>
+        <h1>Algum erro ocorreu durante o processo de remoção do evento!</h1><br>
     <?php
 } else {
     ?>
-    <h1>Algum erro ocorreu durante o processo de remoção do evento!</h1>
+        <h1>Evento removido com sucesso!</h1>
     <?php
 }
 
