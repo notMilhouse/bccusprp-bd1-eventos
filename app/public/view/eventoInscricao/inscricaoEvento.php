@@ -1,3 +1,4 @@
+<?php //TODO talvez deveria ser algo a partir de um usuario? passando id por get..? ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

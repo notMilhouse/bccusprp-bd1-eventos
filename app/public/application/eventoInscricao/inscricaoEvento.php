@@ -18,23 +18,29 @@ $db_connection = pg_connect(getConnectionInformation()) or die ("Falha na conexÃ
 
 $title = $_POST['eventTitle'];
 $user = $_POST['idUser'];
-//TODO n seria melhor passar o codigo ou entao fazer assim pra ambos?
-$select_codEvent_query = "SELECT cod_evento FROM Evento WHERE titulo = '$title'";
-//TODO sera que nao volta mais de um se o titulo for igual por razoes de nao ser PK? Ai teria que ter um for loop...
 
-//TODO se vai ter soh um retorno melhor usar o fetch assoc e colocar o campo em uma variavel
-$codEvent_result = pg_fetch_all(pg_exec($db_connection,$select_codEvent_query))[0]['cod_evento'];
+$select_codEvent_query = "SELECT cod_evento FROM Evento WHERE titulo = '$title'";
+
+$select_evento_result = pg_exec($db_connection,$select_codEvent_query);
+$evento = pg_fetch_assoc($select_evento_result);
+$cod_evento = $evento['cod_evento'];
 
 $inscription_user_query = "
 INSERT INTO eventoinscricao (id_usuario,cod_evento)
-    VALUES ('$user', '$codEvent_result') 
+    VALUES ('$user', '$cod_evento') 
 ";
 
 $subscribe_event_result = pg_exec($db_connection,$inscription_user_query);
 
-//TODO testar se deu bom, se nao deu, avisar
-echo("UsuÃ¡rio inscrito com sucesso!");
-
+if($subscribe_event_result === false) {
+    ?>
+    <h1>Algum erro ocorreu durante o processo de inscricao!</h1><br>
+    <?php
+} else {
+    ?>
+    <h1>Usuario inscrito no evento com sucesso!</h1>
+    <?php
+}
 
 pg_close ($db_connection);
 ?>

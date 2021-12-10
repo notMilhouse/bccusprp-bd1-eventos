@@ -35,8 +35,6 @@ $create_event_query = "
 
 $create_event_result = pg_exec($db_connection,$create_event_query);
 
-
-
 pg_close($db_connection);
 
 ?>
