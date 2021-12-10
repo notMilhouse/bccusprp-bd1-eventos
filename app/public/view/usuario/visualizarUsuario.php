@@ -6,8 +6,9 @@ $usuario = getSingleUser($_GET['id_usuario']);
 
 ?>
 
-<ul>
+<a href="http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php">Voltar à lista de usuários</a><br>
 
+<ul>
     <li>
         <p>Nome:</p> <p> <?= $usuario["nome"]; ?> </p><br>
         <p>Nome:</p> <p> <?= $usuario["email"]; ?> </p><br>
@@ -16,5 +17,4 @@ $usuario = getSingleUser($_GET['id_usuario']);
         <a href="http://127.0.0.1/application/usuario/removerUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Remover </a><br>
         <a href="http://127.0.0.1/view/usuario/atualizarUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Atualizar </a>
     </li><br>
-
 </ul>

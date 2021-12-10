@@ -23,7 +23,7 @@ echo "<p>Atualizacao efetuada com sucesso!<br><br>
 
 */
 
-include '../repository/dbConfig.php';
+include '../../repository/dbConfig.php';
 
 $db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
@@ -48,4 +48,4 @@ $resultado = pg_exec($db_connection,"
 pg_close ($db_connection);
 
 ?>
-<a href="http://127.0.0.1/view/visualizarEvento.php?cod_evento=<?= $cod_evento ?>"> Voltar para o evento </a>
+<a href="http://127.0.0.1/view/evento/visualizarEvento.php?cod_evento=<?= $cod_evento ?>"> Voltar para o evento </a>
