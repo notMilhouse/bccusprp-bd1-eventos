@@ -15,6 +15,6 @@
     <a class="button" href="/view/usuario/criarUsuario.php">Cadastrar um usuario</a>
     <a class="button" href="/view/usuario/visualizarTodosUsuarios.php">Visualizar todos os usuarios</a>
 
-    <a class="button" href="/view/inscricaoEvento.php">Inscrever Evento</a>
+    <a class="button" href="/view/eventoInscricao/inscricaoEvento.php">Inscrever Evento</a>
 </body>
 </html>
