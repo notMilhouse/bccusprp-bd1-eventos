@@ -35,9 +35,7 @@ $create_event_query = "
 
 $create_event_result = pg_exec($db_connection,$create_event_query);
 
-
-
 pg_close($db_connection);
 
+header("Location: " . "http://127.0.0.1/view/evento/visualizarTodosEventos.php");
 ?>
-<a href="http://127.0.0.1/view/evento/visualizarTodosEventos.php"> Voltar para a lista de eventos </a>

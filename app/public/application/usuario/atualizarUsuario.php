@@ -25,5 +25,5 @@ $resultado = pg_exec($db_connection,"
 
 pg_close ($db_connection);
 
+header("Location: " . "http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php");
 ?>
-<a href="http://127.0.0.1/view/usuario/visualizarUsuario.php?id_usuario=<?= $id_usuario ?>"> Voltar ao perfil do usuario </a>

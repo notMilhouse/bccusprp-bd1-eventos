@@ -11,7 +11,7 @@ $eventos = getPastEvents();
 <form action="http://127.0.0.1/view/evento/buscaEventos.php">
     <label for="eventTitle">Busca por Título</label><br>
     <input type="text" name="eventTitle">
-    <input type="submit" value="submit">
+    <input class="btn" type="submit" value="submit">
 </form>
 
 <ul>

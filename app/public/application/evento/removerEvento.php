@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 
 /*
@@ -24,17 +22,13 @@ $delete_event = "DELETE FROM Evento WHERE cod_evento = '$cod';";
 
 $delete_event_result = pg_exec($db_connection,$delete_event);
 
-if($delete_event_result === false) {
-    ?>
-        <h1>Algum erro ocorreu durante o processo de remoção do evento!</h1><br>
-    <?php
-} else {
-    ?>
-        <h1>Evento removido com sucesso!</h1>
-    <?php
-}
-
 pg_close ($db_connection);
 
+if($delete_event_result === false) {
+    ?>
+    <h1>Algum erro ocorreu durante o processo de remoção do evento!</h1><br>
+    <?php
+} else {
+    header("Location: " . "http://127.0.0.1/view/evento/visualizarTodosEventos.php");
+}
 ?>
-<a href="http://127.0.0.1/view/evento/visualizarTodosEventos.php"> Voltar para lista de eventos </a>
