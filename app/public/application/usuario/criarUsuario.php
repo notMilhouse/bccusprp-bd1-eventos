@@ -5,7 +5,7 @@ include '../../repository/dbConfig.php';
 $db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
 $nome = $_POST['userName'];
-$email = $_POST['userPassword'];
+$email = $_POST['userEmail'];
 $cpf = $_POST['userCPF'];
 $senha = $_POST['userPassword'];
 $dataNascimento = $_POST['userBirthDate'];

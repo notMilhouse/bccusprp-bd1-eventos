@@ -1,8 +1,7 @@
 <?php
-include '../application/visualizarEvento.php';
+include '../../application/usuario/visualizarUsuario.php';
 
-$eventos = getSingleEvent($_GET['cod_evento']);
-$evento = $eventos[0];
+$usuario = getSingleUser($_GET['id_usuario']);
 
 
 ?>
@@ -14,29 +13,29 @@ $evento = $eventos[0];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualização de evento</title>
+    <title>Atualização de usuario</title>
 </head>
 <body>
-    <h1>Atualizar evento</h1>
-    <form action="../application/atualizarEvento.php" method="post">
+    <h1>Atualizar usuario</h1>
+    <form action="../../application/usuario/atualizarUsuario.php" method="post">
 
-        <input style = "display: none;" type="text" name="eventCode" value="<?=$evento["cod_evento"];?>">
+        <input style = "display: none;" type="text" name="userId" value="<?=$usuario["id_usuario"];?>">
 
-        <label for="eventTitle">Titulo do evento</label>
-        <input type="text" name="eventTitle" id="eventTitle" value="<?=$evento["titulo"];?>"><br>
+        <label for="userName">Nome</label>
+        <input type="text" name="userName" id="userName" value = "<?= $usuario["nome"]; ?>"><br>
 
-        <label for="eventDescription">Descricao do evento</label>
-        <input type="text" name="eventDescription" id="eventDescription" value="<?=$evento["descricao"];?>"><br>
+        <label for="userPassword">Senha</label>
+        <input type="text" name="userPassword" id="userPassword" value = "<?= $usuario["senha"]; ?>"><br>
 
-        <label for="eventLocation">Local do evento</label>
-        <input type="text" name="eventLocation" id="eventLocation" value="<?=$evento["local"];?>"><br>
-        
-        <label for="eventBegin">Data de inicio do evento</label>
-        <input type="datetime-local" name="eventBegin" id="eventBegin" value="<?=$evento["datetime_inicio"];?>"><br>
-        
-        <label for="eventEnd">Data de fim do evento</label>
-        <input type="datetime-local" name="eventEnd" id="eventEnd" value="<?=$evento["datetime_fim"];?>"><br>
-        
+        <label for="userEmail">Email</label>
+        <input type="text" name="userEmail" id="userEmail" value = "<?= $usuario["email"]; ?>"><br>
+
+        <label for="userBirthDate">Data de nascimento</label>
+        <input type="date" name="userBirthDate" id="userBirthDate"value = "<?= $usuario["data_nascimento"]; ?>"><br>
+
+        <label for="userCPF">CPF</label>
+        <input type="text" name="userCPF" id="userCPF" value = "<?= $usuario["cpf"]; ?>"><br>
+
         <input type="submit" value="Submit"><br>
     </form>
 </body>
