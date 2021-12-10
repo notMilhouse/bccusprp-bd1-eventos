@@ -9,8 +9,8 @@
 </head>
 <body>
 
-    <a class="button" href="/view/criarEvento.php">Criar um evento</a>
-    <a class="button" href="/view/visualizarTodosEventos.php">Visualizar todos os eventos</a>
+    <a class="button" href="/view/evento/criarEvento.php">Criar um evento</a>
+    <a class="button" href="/view/evento/visualizarTodosEventos.php">Visualizar todos os eventos</a>
 
     <a class="button" href="/view/usuario/criarUsuario.php">Cadastrar um usuario</a>
     <a class="button" href="/view/usuario/visualizarTodosUsuarios.php">Visualizar todos os usuarios</a>

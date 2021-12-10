@@ -18,9 +18,9 @@ values('$cod_recebido', '$nome_recebido') ");
 pg_close ($conex1); 
 
 */
-include '../repository/dbConfig.php';
+include '../../repository/dbConfig.php';
 
-$db_connection = pg_connect ($dbConnectionInformation) or die ("Falha na conexão!".pg_last_error());
+$db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
 $title = $_POST['eventTitle'];
 $local = $_POST['eventLocation'];
@@ -40,3 +40,4 @@ $create_event_result = pg_exec($db_connection,$create_event_query);
 pg_close($db_connection);
 
 ?>
+<a href="http://127.0.0.1/view/evento/visualizarTodosEventos.php"> Voltar para a lista de eventos </a>

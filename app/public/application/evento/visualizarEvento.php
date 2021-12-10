@@ -15,19 +15,16 @@ dateTime_fim -> eventEnd
 
 */
 
-include '../repository/dbConfig.php';
+include '../../repository/dbConfig.php';
 
 function getSingleEvent($cod) {
 
     $db_connection = pg_connect (getConnectionInformation()) or die ("Falha na conexão!".pg_last_error());
 
     $retrieve_single_event_query = "SELECT * FROM evento WHERE cod_evento = '$cod'";
-
     $retrieved_event = pg_exec($db_connection,$retrieve_single_event_query);
 
-
     pg_close ($db_connection);
-
-    return pg_fetch_all($retrieved_event);
+    return pg_fetch_assoc($retrieved_event);
 
 }

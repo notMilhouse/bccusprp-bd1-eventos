@@ -8,8 +8,9 @@
     <title>Criacao de evento</title>
 </head>
 <body>
+    <a href="http://127.0.0.1/index.php">Voltar ao menu</a><br>
     <h1>Criar evento</h1>
-    <form action="../application/criarEvento.php" method="post">
+    <form action="../../application/evento/criarEvento.php" method="post">
 
         <label for="eventTitle">Titulo do evento</label>
         <input type="text" name="eventTitle" id="eventTitle"><br>
