@@ -2,8 +2,11 @@
 
 include '../../application/evento/visualizarTodosEventos.php';
 
-$eventos = getEvents();
-
+if(isset($_GET['eventTitle'])){
+    $eventos = getFilteredEvents($_GET['eventTitle'], $_GET['filtroData']);
+} else{
+    $eventos = getEvents();
+}
 include '../header.php';
 ?>
 
@@ -15,13 +18,21 @@ include '../header.php';
 <div class="container section">
     <h5>Busca</h5>
     <div class="row">
-        <a href="http://127.0.0.1/view/evento/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
-        <a href="http://127.0.0.1/view/evento/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
-    </div>
-    <div class="row">
-        <form action="http://127.0.0.1/view/evento/buscaEventos.php">
+        <form action="http://127.0.0.1/view/evento/visualizarTodosEventos.php" method="GET">
             <label for="eventTitle">Busca por Título</label><br>
-            <input type="text" name="eventTitle">
+            <input type="text" name="eventTitle"/><br>
+            <label for="allEvents">
+                <input class="with-gap" type="radio" name="filtroData" id="allEvents" value="allEvents" checked/>
+                <span>Todos Eventos</span>
+            </label><br>
+            <label for="futureEvents">
+                <input class="with-gap" type="radio" name="filtroData" id="futureEvents" value="futureEvents"/>
+                <span>Eventos Futuros</span>
+            </label><br>
+            <label for="pastEvents">
+                <input class="with-gap" type="radio" name="filtroData" id="pastEvents" value="pastEvents"/>
+                <span>Eventos Passados</span>
+            </label><br>
             <input class="btn" type="submit" value="submit">
         </form>
     </div>
