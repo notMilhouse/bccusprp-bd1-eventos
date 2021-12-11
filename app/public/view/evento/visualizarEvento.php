@@ -24,8 +24,8 @@ include '../header.php';
                     <p><strong>Data de encerramento:</strong> <?= $evento["datetime_fim"]; ?> </p>
                 </div>
                 <div class="card-action">
-                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/www/application/evento/removerEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Remover </a>
-                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/atualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Atualizar </a>
+                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/application/evento/removerEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Remover </a>
+                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/atualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Atualizar </a>
                 </div>
             </div>
         </div>

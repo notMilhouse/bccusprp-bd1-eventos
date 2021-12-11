@@ -6,12 +6,12 @@ $eventos = searchEvents($_GET['eventTitle']);
 
 ?>
 
-<a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/index.php">Voltar ao menu</a><br>
-<a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarTodosEventos.php">Vizualizar Todos os Eventos</a><br>
-<a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
-<a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
+<a href="http://cacto.ffclrp.usp.br:8080/~11819111/index.php">Voltar ao menu</a><br>
+<a href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarTodosEventos.php">Vizualizar Todos os Eventos</a><br>
+<a href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
+<a href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
 
-<form action="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/buscaEventos.php" method="GET">
+<form action="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/buscaEventos.php" method="GET">
     <label for="eventTitle">Busca por Título</label><br>
     <input type="text" name="eventTitle">
     <input class="btn" type="submit" value="submit">
@@ -25,7 +25,7 @@ $eventos = searchEvents($_GET['eventTitle']);
             <h3> Local:</h3> <p> <?= $evento["local"]; ?> </p><br>
             <h3> Inicio:</h3> <p> <?= $evento["datetime_inicio"]; ?> </p><br>
             <h3> Fim:</h3> <p> <?= $evento["datetime_fim"]; ?> </p><br>
-            <a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar </a>
+            <a href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar </a>
         </li><br>
 
     <?php endforeach; ?>

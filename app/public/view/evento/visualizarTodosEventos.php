@@ -18,7 +18,7 @@ include '../header.php';
 <div class="container section">
     <h5>Busca</h5>
     <div class="row">
-        <form action="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarTodosEventos.php" method="GET">
+        <form action="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarTodosEventos.php" method="GET">
             <label for="eventTitle">Busca por Título</label><br>
             <input type="text" name="eventTitle"/><br>
             <label for="allEvents">
@@ -53,7 +53,7 @@ include '../header.php';
                                 <p><strong>Data de encerramento:</strong> <?= $evento["datetime_fim"]; ?> </p>
                             </div>
                             <div class="card-action">
-                                <a class="deep-purple-text accent-3"  href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar detalhes</a>
+                                <a class="deep-purple-text accent-3"  href="http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar detalhes</a>
                             </div>
                         </div>
                     </div>

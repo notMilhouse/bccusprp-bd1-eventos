@@ -29,6 +29,6 @@ if($delete_event_result === false) {
     <h1>Algum erro ocorreu durante o processo de remoção do evento!</h1><br>
     <?php
 } else {
-    header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarTodosEventos.php");
+    header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarTodosEventos.php");
 }
 ?>

@@ -37,5 +37,5 @@ $create_event_result = pg_exec($db_connection,$create_event_query);
 
 pg_close($db_connection);
 
-header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarTodosEventos.php");
+header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/view/evento/visualizarTodosEventos.php");
 ?>

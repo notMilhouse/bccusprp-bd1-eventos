@@ -29,6 +29,6 @@ if($delete_sub_result === false) {
     <h1>Algum erro ocorreu durante o processo de remoção da inscricao!</h1><br>
     <?php
 } else {
-    header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/www/view/eventoInscricao/visualizarTodasInscricoes.php");
+    header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/view/eventoInscricao/visualizarTodasInscricoes.php");
 }
 ?>
