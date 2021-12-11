@@ -45,5 +45,5 @@ $resultado = pg_exec($db_connection,"
 
 pg_close ($db_connection);
 
-header("Location: " . "http://127.0.0.1/view/evento/visualizarTodosEventos.php");
+header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarTodosEventos.php");
 ?>

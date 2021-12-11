@@ -22,8 +22,8 @@ include '../header.php';
                     <p><strong>Data de nascimento:</strong> <?= $usuario["data_nascimento"]; ?> </p>
                 </div>
                 <div class="card-action">
-                    <a class="deep-purple-text accent-3" href="http://127.0.0.1/application/usuario/removerUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Remover </a>
-                    <a class="deep-purple-text accent-3" href="http://127.0.0.1/view/usuario/atualizarUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Atualizar </a>
+                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/application/usuario/removerUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Remover </a>
+                    <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/view/usuario/atualizarUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"> Atualizar </a>
                 </div>
             </div>
         </div>

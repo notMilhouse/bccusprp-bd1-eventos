@@ -26,7 +26,7 @@ if($delete_user_result === false) { ?>
     <h1>Algum erro ocorreu durante o processo de remoção do usuario!</h1><br>
 <?php
 } else {
-    header("Location: " . "http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php");
+    header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/view/usuario/visualizarTodosUsuarios.php");
 }
 
 pg_close ($db_connection);

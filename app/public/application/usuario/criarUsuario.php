@@ -19,6 +19,6 @@ $create_user_result = pg_exec($db_connection,$create_user_query);
 
 pg_close($db_connection);
 
-header("Location: " . "http://127.0.0.1/view/usuario/visualizarTodosUsuarios.php");
+header("Location: " . "http://cacto.ffclrp.usp.br:8080/~11819111/view/usuario/visualizarTodosUsuarios.php");
 ?>
 

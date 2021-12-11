@@ -1,9 +1,9 @@
 <?php 
 
 function getConnectionInformation() {
-    return "host = db
+    return "host = 192.168.122.58
         port = 5432  
-        dbname = evento  
-        user = evento  
-        password = evento";
+        dbname = eventos  
+        user =  bccibm21g1
+        password = 5400";
 }

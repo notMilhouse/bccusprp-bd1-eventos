@@ -32,7 +32,7 @@ include '../header.php';
                             <?= $inscricao["nome_usuario"]; ?>
                         </td>
                         <td>
-                            <a class="deep-purple-text accent-3" href="http://127.0.0.1/application/eventoInscricao/removerInscricao.php?cod_inscricao_evento=<?= $inscricao["cod_inscricao"]; ?>"><i class="small material-icons">close</i></a>
+                            <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/application/eventoInscricao/removerInscricao.php?cod_inscricao_evento=<?= $inscricao["cod_inscricao"]; ?>"><i class="small material-icons">close</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -15,11 +15,11 @@ include '../header.php';
 <div class="container section">
     <h5>Busca</h5>
     <div class="row">
-        <a href="http://127.0.0.1/view/evento/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
-        <a href="http://127.0.0.1/view/evento/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
+        <a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEventosFuturos.php">Vizualizar Eventos Futuros</a><br>
+        <a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEventosPassados.php">Vizualizar Eventos Passados</a><br>
     </div>
     <div class="row">
-        <form action="http://127.0.0.1/view/evento/buscaEventos.php">
+        <form action="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/buscaEventos.php">
             <label for="eventTitle">Busca por Título</label><br>
             <input type="text" name="eventTitle">
             <input class="btn" type="submit" value="submit">
@@ -42,7 +42,7 @@ include '../header.php';
                                 <p><strong>Data de encerramento:</strong> <?= $evento["datetime_fim"]; ?> </p>
                             </div>
                             <div class="card-action">
-                                <a class="deep-purple-text accent-3"  href="http://127.0.0.1/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar detalhes</a>
+                                <a class="deep-purple-text accent-3"  href="http://cacto.ffclrp.usp.br:8080/~11819111/www/view/evento/visualizarEvento.php?cod_evento=<?= $evento["cod_evento"]; ?>"> Visualizar detalhes</a>
                             </div>
                         </div>
                     </div>

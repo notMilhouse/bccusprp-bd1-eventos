@@ -1,6 +1,6 @@
 <nav>
     <div class="nav-wrapper deep-purple darken-3">
-        <a href="http://127.0.0.1/index.php" class="brand-logo">Página Inicial</a>
+        <a href="http://cacto.ffclrp.usp.br:8080/~11819111/www/index.php" class="brand-logo">Página Inicial</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/view/usuario/criarUsuario.php">Cadastrar um usuario</a></li>
             <li><a href="/view/usuario/visualizarTodosUsuarios.php">Visualizar todos os usuarios</a></li>

@@ -36,7 +36,7 @@ include '../header.php';
                             <?= $usuario["data_nascimento"]; ?>
                         </td>
                         <td>
-                            <a class="deep-purple-text accent-3" href="http://127.0.0.1/view/usuario/visualizarUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"><i class="small material-icons">search</i></a>
+                            <a class="deep-purple-text accent-3" href="http://cacto.ffclrp.usp.br:8080/~11819111/view/usuario/visualizarUsuario.php?id_usuario=<?= $usuario["id_usuario"]; ?>"><i class="small material-icons">search</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
