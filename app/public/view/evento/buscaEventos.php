@@ -2,7 +2,7 @@
 
 include '../../application/evento/visualizarTodosEventos.php';
 
-$eventos = searchEvents($_GET['eventTitle']);
+$eventos = getFilteredEvents($_GET['eventTitle']);
 
 ?>
 
